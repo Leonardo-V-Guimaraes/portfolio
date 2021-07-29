@@ -2,3 +2,103 @@
 
 @import url('https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css');
 
+/* "*" antes faz com que altere todos os elementos da pagina */
+*{
+    margin: 0;
+    padding: 0%;
+}
+
+/* VH é altura da view em %  */
+header{
+    width: 100%;
+    height: 100vh;
+    overflow: hidden; /* faz com que a tela não ultrapasse o tamanho da tela para os lados do dispositivo */
+    position: relative;
+}
+
+.img-wrapper {
+    width: 100%;
+    height: 100%;
+    overflow: hidden;
+    background-color: rgba(0,0,0,0.8);
+}
+
+/* O comando a baixo faz com que apenas a imagem selecionada ( bg ) respeite o limite de tamanho */
+.img-wrapper img{
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    opacity: 0.48;
+    animation: zoom 25s;
+}
+
+/* A linha abaixo faz a animação de zoom*/ 
+@keyframes zoom {
+    0%{
+        transform: scale(1.3);
+    }
+    100%{
+        transform: scale(1);
+    }
+}
+
+.banner{
+    position: absolute;
+    top: 32%;
+    left: 15%;
+}
+
+.banner h1{
+    color: white;
+    font-size: 3.5rem; /* usar o "rem" faz com que a medida seja sempre x do tamanho padrão do navegador que é 16px ( questão de acessibilidade )  */
+    font-family: "Baloo Da 2", serif;
+    font-weight: 200;
+    text-shadow: .3rem  .4rem 2px rgba(0, 0, 0, .4);
+    line-height: 3.5rem;
+    margin-bottom: 2rem;
+    opacity: 0;
+    animation: moveBanner 1s 0.5s forwards;
+}
+
+.banner p{
+    font-family: "Josefin Slab", serif;
+    color: white;
+    font-size: 2rem;
+    text-shadow: .2rem .2rem rgba(0, 0, 0, .4);
+    margin-bottom: 2rem;
+    opacity: 0;
+    animation: moveBanner 1s 0.7s forwards;
+}
+
+.banner button{
+    font-family: "Muli", serif;
+    color: white;
+    font-size: 1.2rem;
+    text-transform: uppercase;
+    letter-spacing: .1rem;
+    background: #7F00FF;  /* navegadores antigos */
+    background: -webkit-linear-gradient(to right, #E100FF, #7F00FF);  /* navagadores que nao tem suporte */
+    background: linear-gradient(to right, #E100FF, #7F00FF); /* navegadores recentes */
+    padding: 1rem 3.5rem;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    opacity: 0;
+    animation: moveBanner 1s 0.9s forwards;
+}
+
+@keyframes moveBanner {
+    0% {
+        transform: translateY(10rem) rotateY(-30deg);
+    }
+    100% {
+        transform: translateY(0) rotateY(0);
+        opacity: 1;
+    }
+}
+
+.banner button:hover{
+    opacity: 0.8;
+    color: black;
+}
+
