@@ -10,5 +10,5 @@ O controle das tarefas desse projeto será realizado no GutHub
 
 - :package: nova funcionalidade
 - :up: atualizaçõa
-- :beetle: correção de bug
+- :bug: correção de bug
 - :checkered_flag: release
